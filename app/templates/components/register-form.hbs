@@ -1,0 +1,39 @@
+<div>
+  <h1>Register Form</h1>
+</div>
+<form onsubmit={{action 'saveChanges' }}>
+  <div>
+    <label>Name: </label>
+    {{input type="text" name="name" placeholder="Enter your name" value=name}}
+    {{#each errors.name as |error|}}
+    <span>Name {{error}}</span>
+    {{/each}}
+  </div>
+
+  <div>
+    <label>Email: </label>
+    {{input type="text" name="email" placeholder="Enter your email" value=email}}
+    {{#each errors.email as |error|}}
+    <span>Email {{error}}</span>
+    {{/each}}
+  </div>
+
+  <div>
+    <label>Password: </label>
+    {{input type="password" name="password" placeholder="Enter your password" value=password}}
+    {{#each errors.password as |error|}}
+    <span>Password {{error}}</span>
+    {{/each}}
+  </div>
+
+  <div>
+    <label>Confirm password: </label>
+    {{input type="password" name="password" placeholder="Confirm your password" value=password_confirmation}}
+    {{#each errors.password_confirmation as |error|}}
+    <span>Confirm password {{error}}</span>
+    {{/each}}
+  </div>
+
+  <button type="submit">Register</button>
+
+</form>

@@ -1,0 +1,17 @@
+<h1> Todos</h1>
+
+{{#link-to 'todo.create'}}
+Add new todo
+{{/link-to}}
+
+{{#each model as |todo|}}
+<p>Title: {{todo.title}}</p>
+<p>Description: {{todo.description}}</p>
+{{#link-to 'todo.edit' todo.id}}
+<button>Edit</button>
+{{/link-to}}
+<button {{action 'deleteTodo' todo}}>Delete</button>
+<hr>
+{{/each}}
+
+<button {{action 'deleteAll' }}>DeleteAll</button>

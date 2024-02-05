@@ -6,7 +6,14 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
+Router.map(function () {
+  this.route('todo', { path: '/todos' }, function () {
+    // this.route('todo', { path: '/' })
+    this.route('create');
+    this.route('edit', { path: '/:id' });
+  })
+  this.route('register');
+  this.route('login');
 });
 
 export default Router;

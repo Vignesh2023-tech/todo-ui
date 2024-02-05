@@ -1,0 +1,15 @@
+<h1> Edit Todo</h1>
+<form onsubmit={{action 'updateTodo' }}>
+  <div>
+    <label>Title</label>
+    {{input type="text" name="title" value=model.title}}
+  </div>
+  <br>
+  <div>
+    <label>Description</label>
+    {{input type="text" name="description" value=model.description}}
+  </div>
+  <br>
+
+  <button type="'submit">Update</button>
+</form>
