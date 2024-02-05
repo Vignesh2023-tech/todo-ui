@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function () {
   this.route('todo', { path: '/todos' }, function () {
-    // this.route('todo', { path: '/' })
+    this.route('todo', { path: '/' })
     this.route('create');
     this.route('edit', { path: '/:id' });
   })
