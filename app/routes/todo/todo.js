@@ -3,11 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model() {
-    let user_token = localStorage.getItem('user_token') || "";
-    if (user_token.trim() !== "") {
-      console.log('inside todo js route')
-    }
-
+    // console.log(JSON.parse(sessionStorage.getItem('user_token')));
     return this.store.findAll('todo')
   }
 });

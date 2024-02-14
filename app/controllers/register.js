@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     saveUser(attrs) {
       let user = this.store.createRecord('user', attrs);
       user.save().then(() => {
-        this.transitionToRoute('todo');
+        this.transitionToRoute('login');
         console.log("login sucessfull");
       }).catch((e) => {
         this.set('model', attrs); // to get the entered data back

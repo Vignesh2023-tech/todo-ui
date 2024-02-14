@@ -21,13 +21,14 @@ export default Ember.Controller.extend({
         success: (response) => {
           // Handle successful response
           console.log('Login successful:', response);
-          localStorage.setItem('user_token', JSON.stringify(response.token));
+          // document.cookie = `user_token=${response.token}`;
+          sessionStorage.setItem('user_token', JSON.stringify(response.token));
           this.transitionToRoute('todo');
         },
-        error: (error) => {
+        error: (e) => {
           // Handle error
-          console.error('Login failed:', error);
-          this.set('errors', error);
+          console.log('Login failed:', e);
+          this.set('errors', e.responseJSON.errors);
         }
       });
 
